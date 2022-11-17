@@ -216,7 +216,9 @@ public class WallRunning_MLab : MonoBehaviour
 
         // if climbing has started continuously call ClimbingMovment()
         if (pm.climbing && !exitingWall)
-            ClimbingMovement();
+        {
+            //ClimbingMovement();
+        }
     }
 
     #region Input & Wallchecks
@@ -235,7 +237,7 @@ public class WallRunning_MLab : MonoBehaviour
         if (Input.GetKeyDown(wallJumpKey) && (pm.wallrunning || wallFront || wallBack) && !lg.exitingLedge)
         {
             pm.maxYSpeed = -1; // make sure the players Y speed is unlimited
-            WallJump(); // perform a wall jump
+            //WallJump(); // perform a wall jump
         }
 
         // when climbing, then stopping before the climbTimer runs out, then reentering
