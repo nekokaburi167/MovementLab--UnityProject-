@@ -217,7 +217,7 @@ public class WallRunning_MLab : MonoBehaviour
         // if climbing has started continuously call ClimbingMovment()
         if (pm.climbing && !exitingWall)
         {
-            //ClimbingMovement();
+            ClimbingMovement();
         }
     }
 
