@@ -58,7 +58,7 @@ public class Grappling_MLab: MonoBehaviour
     }
 
     [Header("Input")]
-    public KeyCode swingKey = KeyCode.Mouse0;
+    //public KeyCode swingKey = KeyCode.Mouse0;
     public KeyCode grappleKey = KeyCode.Mouse1;
 
     private Rigidbody rb;
@@ -99,9 +99,9 @@ public class Grappling_MLab: MonoBehaviour
     private void MyInput()
     {
         // StartSwing() is called when you press down the swingKey
-        if (Input.GetKeyDown(swingKey)) StartSwing();
+        //if (Input.GetKeyDown(swingKey)) StartSwing();
         // StopSwing() is called when you release the swingKey
-        if (Input.GetKeyUp(swingKey)) StopSwing();
+        //if (Input.GetKeyUp(swingKey)) StopSwing();
 
         // StartGrapple() is called when you press down the grappleKey
         if (Input.GetKeyDown(grappleKey)) StartGrapple();
