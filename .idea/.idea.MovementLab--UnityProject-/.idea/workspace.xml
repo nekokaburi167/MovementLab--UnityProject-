@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ca2a1ba6-01f0-45f9-8ec4-1817a2d9da76" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MovementLab--UnityProject-/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MovementLab--UnityProject-/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/EffectExamples/WeaponEffects/Prefabs/MuzzleFlashEffect.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EffectExamples/WeaponEffects/Prefabs/MuzzleFlashEffect.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MovementLab.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MovementLab.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/1_Commented/GunSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/1_Commented/GunSystem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +69,8 @@
       <workItem from="1668399615619" duration="7234000" />
       <workItem from="1668714674982" duration="5797000" />
       <workItem from="1668748827708" duration="799000" />
-      <workItem from="1668750269416" duration="3597000" />
+      <workItem from="1668750269416" duration="3891000" />
+      <workItem from="1668758235373" duration="53000" />
     </task>
     <servers />
   </component>

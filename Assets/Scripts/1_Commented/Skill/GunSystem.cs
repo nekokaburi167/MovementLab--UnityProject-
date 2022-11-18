@@ -24,9 +24,6 @@ public class GunSystem : MonoBehaviour
     public RaycastHit bulletHit;
     public LayerMask enemyLayer;
     
-    //visual effect
-    public GameObject muzzleFlash;
-    
     private void Awake()
     {
         bulletsRemain = magazineSize;
@@ -79,8 +76,6 @@ public class GunSystem : MonoBehaviour
                  bulletHit.collider.gameObject.SetActive(false);
              }
          }
-        
-         Instantiate(muzzleFlash,firePoint.position, Quaternion.identity);
          
         bulletsRemain--;
         bulletsShot--;
