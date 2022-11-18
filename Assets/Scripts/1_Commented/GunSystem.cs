@@ -3,26 +3,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class GunSystem : MonoBehaviour
 {
     //Gun Stats
-    public float damage;
+    public float weaponDamage;
     public float fireInterval, bulletSpread, fireRange, reloadTime, timeBetweenShots;
     public int magazineSize, bulletPerTap;
-    public bool canHold;
-    public int bulletsRemain, bulletShot;
+    public bool isAutomatic;
+    int bulletsRemain, bulletsShot;
 
     //condition checks
-    private bool shooting, readyToShoot, reloading;
+    private bool isShooting, readyToShoot, isReloading;
 
     //Reference
     public Camera playerCam;
     public Transform firePoint;
-    public RaycastHit hit;
+    public RaycastHit bulletHit;
     public LayerMask enemyLayer;
     
+    //visual effect
+    public GameObject muzzleFlash;
     
     private void Awake()
     {
@@ -32,27 +35,28 @@ public class GunSystem : MonoBehaviour
 
     private void InputHandler()
     {
-        if (canHold)
-            shooting = Input.GetKey(KeyCode.Mouse0);
+        if (isAutomatic)
+            isShooting = Input.GetKey(KeyCode.Mouse0);
         else
-            shooting = Input.GetKeyDown(KeyCode.Mouse0);
+            isShooting = Input.GetKeyDown(KeyCode.Mouse0);
 
-        if (Input.GetKeyDown(KeyCode.R) && bulletsRemain < magazineSize && !reloading)
+        if (Input.GetKeyDown(KeyCode.R) && bulletsRemain < magazineSize && !isReloading)
             Reload();
 
-        if (readyToShoot && shooting && !reloading && bulletsRemain > 0)
+        if (readyToShoot && isShooting && !isReloading && bulletsRemain > 0)
         {
-            bulletShot = bulletPerTap;
-            Shoot();
+            bulletsShot = bulletPerTap;
+            WeaponFire();
         }
     }
     
     private void Update()
     {
         InputHandler();
+        
     }
     
-    private void Shoot()
+    private void WeaponFire()
     {
         readyToShoot = false;
 
@@ -61,40 +65,45 @@ public class GunSystem : MonoBehaviour
         float ySpread = Random.Range(-bulletSpread, bulletSpread);
 
         Vector3 bulletHitDirection = playerCam.transform.forward + new Vector3(xSpread, ySpread, 0);
+
+        //Debug.DrawRay(playerCam.transform.position, playerCam.transform.forward, Color.magenta, 20, false);
         
         //fire raycast 
-        if (Physics.Raycast(playerCam.transform.position, bulletHitDirection, out hit, fireRange, enemyLayer))
-        {
-            Debug.DrawRay(playerCam.transform.position, bulletHitDirection, Color.magenta);
-
-            // if (hit.collider.CompareTag("Enemy"))
-            // {
-            //     
-            // }
-        }
-
+         if (Physics.Raycast(playerCam.transform.position, bulletHitDirection, out bulletHit, fireRange, enemyLayer))
+         {
+             Debug.DrawRay(playerCam.transform.position, playerCam.transform.forward, Color.magenta, 20, false);
+             
+             if (bulletHit.collider.CompareTag("Enemy"))
+             {
+                 Debug.Log(bulletHit.collider.name);
+                 bulletHit.collider.gameObject.SetActive(false);
+             }
+         }
+        
+         Instantiate(muzzleFlash,firePoint.position, Quaternion.identity);
+         
         bulletsRemain--;
-        bulletShot--;
+        bulletsShot--;
 
-        Invoke("Shoot", timeBetweenShots);
+        Invoke("FireReset", timeBetweenShots);
 
-        if (bulletShot > 0 && bulletsRemain > 0) 
-            Invoke("ResetShot", fireInterval);
+        if (bulletsShot > 0 && bulletsRemain > 0) 
+            Invoke("WeaponFire", fireInterval);
     }
 
     private void Reload()
     {
-        reloading = true;
+        isReloading = true;
         Invoke("reloadFinished", reloadTime);
     }
 
     private void reloadFinished()
     {
         bulletsRemain = magazineSize;
-        reloading = false;
+        isReloading = false;
     }
 
-    void ResetShot()
+    void FireReset()
     {
         readyToShoot = true;
     }

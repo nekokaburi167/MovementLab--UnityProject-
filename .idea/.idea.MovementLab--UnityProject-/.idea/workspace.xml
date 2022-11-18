@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ca2a1ba6-01f0-45f9-8ec4-1817a2d9da76" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MovementLab--UnityProject-/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MovementLab--UnityProject-/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/1_Commented/Movement/WallRunning_MLab.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/1_Commented/Movement/WallRunning_MLab.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EffectExamples/WeaponEffects/Prefabs/MuzzleFlashEffect.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/EffectExamples/WeaponEffects/Prefabs/MuzzleFlashEffect.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MovementLab.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MovementLab.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/1_Commented/GunSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/1_Commented/GunSystem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +32,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.8f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.9f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath &quot;E:\Dev\Level Design\Projects\Unity\MovementLab--UnityProject-&quot; -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="E:\Dev\Level Design\Projects\Unity\MovementLab--UnityProject-" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -71,6 +70,8 @@
       <updated>1668399614315</updated>
       <workItem from="1668399615619" duration="7234000" />
       <workItem from="1668714674982" duration="5797000" />
+      <workItem from="1668748827708" duration="799000" />
+      <workItem from="1668750269416" duration="3597000" />
     </task>
     <servers />
   </component>
