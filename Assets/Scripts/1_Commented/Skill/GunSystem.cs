@@ -24,10 +24,16 @@ public class GunSystem : MonoBehaviour
     public RaycastHit bulletHit;
     public LayerMask enemyLayer;
     
+    //muzzle flash
+    public GameObject muzzleFlashPre;
+
+    private ParticleSystem muzzleFlash;
+    
     private void Awake()
     {
         bulletsRemain = magazineSize;
         readyToShoot = true;
+        muzzleFlash = muzzleFlashPre.GetComponent<ParticleSystem>();
     }
 
     private void InputHandler()
@@ -77,6 +83,15 @@ public class GunSystem : MonoBehaviour
              }
          }
          
+        //muzzle flash
+        if (muzzleFlashPre != null)
+        {
+            //GameObject tempMuzzleFlash = Instantiate(muzzleFlashPre, weaponMuzzle.position, weaponMuzzle.rotation);
+            //Destroy(tempMuzzleFlash, t: 2);
+            Debug.Log("dd");
+            muzzleFlash.Play();
+        }
+
         bulletsRemain--;
         bulletsShot--;
 
