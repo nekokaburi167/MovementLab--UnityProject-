@@ -59,7 +59,7 @@ public class Grappling_MLab: MonoBehaviour
 
     [Header("Input")]
     //public KeyCode swingKey = KeyCode.Mouse0;
-    public KeyCode grappleKey = KeyCode.Mouse1;
+    private KeyCode grappleKey = KeyCode.Mouse2;
 
     private Rigidbody rb;
 

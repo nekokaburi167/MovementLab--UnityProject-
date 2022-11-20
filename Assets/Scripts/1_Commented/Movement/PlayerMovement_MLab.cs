@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Dave;
+using UnityEngine.Serialization;
 
 
 // Dave MovementLab - PlayerMovement
@@ -57,6 +59,7 @@ public class PlayerMovement_MLab : MonoBehaviour
     public KeyCode jumpKey = KeyCode.Space;
     public KeyCode walkKey = KeyCode.LeftShift;
     public KeyCode crouchKey = KeyCode.LeftControl;
+    private KeyCode bulletTimeKey = KeyCode.Mouse1;
     private bool readyToJump = true;
 
     [Header("Speed handling")]
@@ -152,8 +155,13 @@ public class PlayerMovement_MLab : MonoBehaviour
     private Rigidbody rb; // the players rigidbody
 
     RaycastHit slopeHit; // variable needed for slopeCheck
-
-
+    
+    //Bullet Time
+    private float slowdownFactor = 0.05f;
+    private float maxSlowdownTime = 1f;
+    private float slowDownTimer;
+    private bool isBulltTimeStart;
+    
     // text variables needed to display the speed and movement state ingame
 
     public TextMeshProUGUI text_speed;
@@ -182,11 +190,15 @@ public class PlayerMovement_MLab : MonoBehaviour
         startYScale = transform.localScale.y;
 
         readyToJump = true;
+
+        slowDownTimer = maxSlowdownTime;
+        
+        Debug.Log("slowDownTimer: " + slowDownTimer);
     }
 
     private void Update()
     {
-        print("slope" + OnSlope());
+        //print("slope" + OnSlope());
 
         // make sure to call all functions every frame
         MyInput();
@@ -212,6 +224,24 @@ public class PlayerMovement_MLab : MonoBehaviour
         }
 
         DebugText();
+
+        //Bullet Time
+        if (!grounded && isBulltTimeStart && slowDownTimer > 0)
+        {
+            InitBulletTime();
+            
+            slowDownTimer -= Time.unscaledDeltaTime;
+            slowDownTimer = Mathf.Clamp(slowDownTimer, 0, maxSlowdownTime);
+        }
+        else
+        {
+            Time.timeScale = 1f;
+        }
+
+        if (grounded)
+        {
+            slowDownTimer = maxSlowdownTime;
+        }
     }
 
     /// functions that directly move the player should be called in FixedUpdate()
@@ -265,6 +295,16 @@ public class PlayerMovement_MLab : MonoBehaviour
 
         // whenever you press the walk key, walking should be true
         walking = Input.GetKey(walkKey);
+        
+        //Bullet Time
+        if (Input.GetKey(bulletTimeKey))
+        {
+            isBulltTimeStart = true;
+        }
+        else
+        {
+            isBulltTimeStart = false;
+        }
     }
 
     /// entire function only called when mm == walking, sprinting crouching or air
@@ -753,4 +793,10 @@ public class PlayerMovement_MLab : MonoBehaviour
     }
 
     #endregion
+    
+    public void InitBulletTime()
+    {
+        Time.timeScale = slowdownFactor;
+        Time.fixedDeltaTime = Time.timeScale * 0.02f;
+    }
 }

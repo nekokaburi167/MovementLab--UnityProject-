@@ -43944,7 +43944,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29060
+  m_Name: pb_Mesh25576
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -45739,7 +45739,7 @@ MonoBehaviour:
   reloadTime: 1
   timeBetweenShots: 0.08
   magazineSize: 30
-  bulletPerTap: 3
+  bulletPerTap: 1
   isAutomatic: 1
   playerCam: {fileID: 1312944058}
   firePoint: {fileID: 0}
@@ -45747,6 +45747,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 32768
   muzzleFlashPre: {fileID: 1166568601}
+  bt: {fileID: 1689446583}
 --- !u!43 &1053880405
 Mesh:
   m_ObjectHideFlags: 0
@@ -63471,6 +63472,50 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1689446582
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1689446584}
+  - component: {fileID: 1689446583}
+  m_Layer: 0
+  m_Name: BulletTime
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1689446583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689446582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5daa786f4491c8478fa578940092f15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1689446584
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689446582}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 39.215015, y: 3.8532197, z: 9.207118}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1697733247
 GameObject:
   m_ObjectHideFlags: 0
@@ -96567,6 +96612,11 @@ PrefabInstance:
       propertyPath: text_moveState
       value: 
       objectReference: {fileID: 2106461194}
+    - target: {fileID: 6203304368605208344, guid: 20dd83c54b1592a4db36441848eafc5d,
+        type: 3}
+      propertyPath: maxSlowdownTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6203304368605208346, guid: 20dd83c54b1592a4db36441848eafc5d,
         type: 3}
       propertyPath: text_wallState

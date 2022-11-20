@@ -26,9 +26,11 @@ public class GunSystem : MonoBehaviour
     
     //muzzle flash
     public GameObject muzzleFlashPre;
-
     private ParticleSystem muzzleFlash;
     
+    //Bullet Time
+    public BulletTime bt;
+
     private void Awake()
     {
         bulletsRemain = magazineSize;
@@ -51,6 +53,16 @@ public class GunSystem : MonoBehaviour
             bulletsShot = bulletPerTap;
             WeaponFire();
         }
+        
+        // if (Input.GetMouseButton(1))
+        // {
+        //     Debug.Log("Sloooooooow");
+        //     bt.InitBulletTime();
+        // }
+        // else
+        // {
+        //     Time.timeScale = 1.0f;
+        // }
     }
     
     private void Update()
@@ -85,10 +97,7 @@ public class GunSystem : MonoBehaviour
          
         //muzzle flash
         if (muzzleFlashPre != null)
-        {
-            //GameObject tempMuzzleFlash = Instantiate(muzzleFlashPre, weaponMuzzle.position, weaponMuzzle.rotation);
-            //Destroy(tempMuzzleFlash, t: 2);
-            Debug.Log("dd");
+        { 
             muzzleFlash.Play();
         }
 
