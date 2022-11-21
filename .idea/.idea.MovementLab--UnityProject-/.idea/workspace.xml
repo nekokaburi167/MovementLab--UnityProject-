@@ -3,12 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="ca2a1ba6-01f0-45f9-8ec4-1817a2d9da76" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MovementLab--UnityProject-/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MovementLab--UnityProject-/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Mesh_Projectile.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Mesh_Projectile.fbx.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MovementLab.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MovementLab.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/1_Commented/Movement/Grappling_MLab.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/1_Commented/Movement/Grappling_MLab.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/1_Commented/Movement/PlayerMovement_MLab.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/1_Commented/Movement/PlayerMovement_MLab.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/1_Commented/Skill/BulletTime.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/1_Commented/Skill/BulletTime.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/1_Commented/Skill/GunSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/1_Commented/Skill/GunSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

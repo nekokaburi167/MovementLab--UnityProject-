@@ -5,6 +5,7 @@ using UnityEngine;
 using TMPro;
 using Dave;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 
 // Dave MovementLab - PlayerMovement
@@ -162,8 +163,10 @@ public class PlayerMovement_MLab : MonoBehaviour
     private float slowDownTimer;
     private bool isBulltTimeStart;
     
+    //bullet Time UI
+    public Slider bulletTimeSlider;
+    
     // text variables needed to display the speed and movement state ingame
-
     public TextMeshProUGUI text_speed;
     public TextMeshProUGUI text_ySpeed;
     public TextMeshProUGUI text_moveState;
@@ -240,8 +243,12 @@ public class PlayerMovement_MLab : MonoBehaviour
 
         if (grounded)
         {
-            slowDownTimer = maxSlowdownTime;
+            slowDownTimer += Time.unscaledDeltaTime * 1.5f;
+            slowDownTimer = Mathf.Clamp(slowDownTimer, 0, maxSlowdownTime);
         }
+        
+        //Bullet Time UI
+        bulletTimeSlider.value = slowDownTimer / maxSlowdownTime;
     }
 
     /// functions that directly move the player should be called in FixedUpdate()

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
@@ -27,10 +28,10 @@ public class GunSystem : MonoBehaviour
     //muzzle flash
     public GameObject muzzleFlashPre;
     private ParticleSystem muzzleFlash;
-    
-    //Bullet Time
-    public BulletTime bt;
 
+    //Weapon UI
+    public TextMeshProUGUI ammoText;
+    
     private void Awake()
     {
         bulletsRemain = magazineSize;
@@ -53,22 +54,16 @@ public class GunSystem : MonoBehaviour
             bulletsShot = bulletPerTap;
             WeaponFire();
         }
-        
-        // if (Input.GetMouseButton(1))
-        // {
-        //     Debug.Log("Sloooooooow");
-        //     bt.InitBulletTime();
-        // }
-        // else
-        // {
-        //     Time.timeScale = 1.0f;
-        // }
     }
     
     private void Update()
     {
         InputHandler();
-        
+
+        if (bulletsRemain < magazineSize)
+            ammoText.text = bulletsRemain + " / " + magazineSize;
+        else
+            ammoText.text = magazineSize + " / " + magazineSize;
     }
     
     private void WeaponFire()
